@@ -2,11 +2,10 @@
 
 locals {
   bitCount = sum([tonumber(local.subnet_options.cidrMask),-tonumber(split("/",var.vpc_cidr)[1])])
-  
 }
 
 resource "aws_subnet" "main" {
-    count = tonumber(local.subnetCount)
+    count = tonumber(local.subnet_options.subnetCount)
     vpc_id     = aws_vpc.main.id
     cidr_block = cidrsubnet(var.vpc_cidr, local.bitCount, count.index)
 
