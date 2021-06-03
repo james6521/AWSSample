@@ -6,7 +6,7 @@ locals {
 }
 
 resource "aws_subnet" "main" {
-    count = tonumber(var.subnetCount)
+    count = tonumber(local.subnetCount)
     vpc_id     = aws_vpc.main.id
     cidr_block = cidrsubnet(var.vpc_cidr, local.bitCount, count.index)
 
