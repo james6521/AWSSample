@@ -8,7 +8,7 @@ variable "secret_key" {
 
 variable "subnetCount" {
   type = number
-  default = "1"
+  default = "<%=customOptions.subnetCount%>"
 }
 
 variable "sensitive_thing" {
