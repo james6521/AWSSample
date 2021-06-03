@@ -2,6 +2,7 @@
 
 locals {
   bitCount = sum([tonumber(local.subnet_options.cidrMask),-tonumber(split("/",var.vpc_cidr)[1])])
+  subnetCount = local.subnet_options.subnetCount
 }
 
 resource "aws_subnet" "main" {
