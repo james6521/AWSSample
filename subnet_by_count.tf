@@ -1,7 +1,5 @@
 # This spec template creates AWS subnets based on the count requested utilizing the vpc cidr provided in var.vpc_cidr variable
 
-variable subnetCount {}
-
 locals {
   bitCount = sum([tonumber(local.subnet_options.cidrMask),-tonumber(split("/",var.vpc_cidr)[1])])
 }
