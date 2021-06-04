@@ -11,8 +11,8 @@ terraform {
 
 provider "aws" {
   region     = local.vpc_options.region
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
+  access_key = "var.access_key"
+  secret_key = "var.secret_key"
 
   
 }
